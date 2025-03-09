@@ -3,33 +3,30 @@ import { Button } from "@headlessui/react";
 import { Mail, MapPin } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardContent } from "../ui/card";
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
 
 export function ContactUs() {
-  const [currentLogoIndex, setCurrentLogoIndex] = useState(0);
-
-  const socialLinks = [
-    { icon: "facebook", href: "https://facebook.com", color: "bg-blue-600" },
-    { icon: "instagram", href: "https://instagram.com", color: "bg-pink-600" },
-    { icon: "twitter", href: "https://twitter.com", color: "bg-blue-400" },
-    { icon: "linkedin", href: "https://linkedin.com", color: "bg-blue-700" }
-  ];
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentLogoIndex((prev) => (prev + 1) % socialLinks.length);
-    }, 3000);
-    return () => clearInterval(timer);
-  }, []);
+  const socialButtonVariants = {
+    hidden: { scale: 0, opacity: 0 },
+    visible: (i: number) => ({
+      scale: 1,
+      opacity: 1,
+      transition: {
+        delay: i * 0.1,
+        duration: 0.5,
+        type: "spring",
+        stiffness: 200
+      }
+    })
+  }
 
   return (
-    <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
+    <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-green-50">
       <div className="container px-4 md:px-6">
         <motion.div 
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6 }}
           className="flex flex-col items-center justify-center space-y-4 text-center"
         >
           <div className="space-y-2">
@@ -44,13 +41,14 @@ export function ContactUs() {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: false }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.7 }}
+            className="flex flex-col"
           >
-            <Card className="bg-white shadow-lg rounded-lg">
+            <Card className="flex flex-col flex-1 bg-green-100 shadow-lg rounded-lg hover:shadow-xl transition-shadow duration-300">
               <CardHeader>
                 <CardTitle className="text-green-700">Contact Information</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-4 flex-1">
                 <motion.div 
                   initial={{ x: -20, opacity: 0 }}
                   whileInView={{ x: 0, opacity: 1 }}
@@ -70,26 +68,60 @@ export function ContactUs() {
                   <p>IEEE NSS Office, 123 Engineering Avenue</p>
                 </motion.div>
                 <div className="flex gap-4 mt-6">
-                  {socialLinks.map((social, index) => (
-                    <motion.a
-                      key={social.icon}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      initial={{ scale: 1 }}
-                      animate={{ 
-                        scale: currentLogoIndex === index ? 1.2 : 1,
-                        transition: { duration: 3 }
-                      }}
-                      whileHover={{ 
-                        scale: 1.3,
-                        transition: { duration: 3 }
-                      }}
+                  {[0, 1].map((index) => (
+                    <motion.div
+                      key={index}
+                      custom={index}
+                      variants={socialButtonVariants}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: false }}
                     >
-                      <Button className={`${social.color} hover:opacity-90 text-white px-4 py-2 rounded-full transition-all duration-300`}>
-                        {/* ... existing social icons ... */}
-                      </Button>
-                    </motion.a>
+                      {index === 0 && (
+                        <a href="https://www.facebook.com/profile.php?id=61561012416766" target="_blank" rel="noopener noreferrer">
+                          <Button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full cursor-pointer">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              className="h-5 w-5"
+                            >
+                              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                            <span className="sr-only">Facebook</span>
+                          </Button>
+                        </a>
+                      )}
+                      {index === 1 && (
+                        <a href="https://www.instagram.com/ieee_ias_pes_isimm_sbjc/" target="_blank" rel="noopener noreferrer">
+                          <Button className="bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-full cursor-pointer">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              className="h-5 w-5"
+                            >
+                              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                            </svg>
+                            <span className="sr-only">Instagram</span>
+                          </Button>
+                        </a>
+                      )}
+                    </motion.div>
                   ))}
                 </div>
               </CardContent>
@@ -99,7 +131,8 @@ export function ContactUs() {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: false }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.7 }}
+            className="flex flex-col"
           >
             <Card className="flex flex-col flex-1 bg-green-100 shadow-lg rounded-lg hover:shadow-xl transition-shadow duration-300">
               <CardHeader>

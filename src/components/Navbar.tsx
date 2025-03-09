@@ -24,13 +24,13 @@ export default function Navbar() {
                 <Link href="/" className="text-sm font-medium hover:underline underline-offset-4">
                   Home
                 </Link>
-                <Link href="#about" className="text-sm font-medium hover:underline underline-offset-4">
+                <Link href="/about" className="text-sm font-medium hover:underline underline-offset-4">
                   About
                 </Link>
                 <Link href="/activities" className="text-sm font-medium hover:underline underline-offset-4">
                   Activities
                 </Link>
-                <Link href="#resources" className="text-sm font-medium hover:underline underline-offset-4">
+                <Link href="/resources" className="text-sm font-medium hover:underline underline-offset-4">
                   Articles
                 </Link>
                 <Link href="/contact" className="text-sm font-medium hover:underline underline-offset-4">

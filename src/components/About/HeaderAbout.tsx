@@ -1,7 +1,7 @@
 'use client'
 import { motion } from "framer-motion"
 
-export function Header() {
+export function HeaderAbout() {
   return (
     <motion.header 
       initial={{ opacity: 0, y: -50 }}
@@ -24,7 +24,7 @@ export function Header() {
             className="text-2xl sm:text-3xl font-bold text-green-800"
             whileHover={{ scale: 1.05 }}
           >
-            Our Activities
+            About US
           </motion.h1>
           <motion.p 
             className="mt-1 text-sm sm:text-base text-green-600"
@@ -32,7 +32,7 @@ export function Header() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
-            Discover and book amazing experiences
+            Discover Our Joint Chapter
           </motion.p>
         </motion.div>
       </div>
