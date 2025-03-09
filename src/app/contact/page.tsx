@@ -1,5 +1,5 @@
 
-import { ContactComponent } from '@/components/Contact/ContactComponent';
+import {ContactUs} from '@/components/Contact/ContactUs';
 import { Footer } from '@/components/Footer';
 import  Navbar  from '@/components/Navbar';
 import React from 'react';
@@ -8,7 +8,7 @@ const ContactPage: React.FC = () => {
     return (
         <div>
             <Navbar />
-            <ContactComponent />
+            <ContactUs />
             <Footer />
         </div>
     );

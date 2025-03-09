@@ -5,8 +5,10 @@ import { AboutOurJointChapter } from "@/components/AboutOurJointChapter"
 import { UpcomingEvents } from "@/components/UpcomingEvents"
 import { ChapterLeadership } from "@/components/ChapterLeadership"
 import { Resources } from "@/components/Resources"
-import { ContactUs } from "@/components/ContactUs"
 import { Footer } from "@/components/Footer"
+import Logos from "@/components/Logos"
+import NewsLetter from "@/components/NewsLetter"
+import Testimonials from "@/components/Testimonials"
 
 export default function Home() {
   return (
@@ -15,10 +17,12 @@ export default function Home() {
       <main className="flex-1">
         <HeroSection />
         <AboutOurJointChapter />
+        <Logos />
         <UpcomingEvents />
         <ChapterLeadership />
         <Resources />
-        <ContactUs />
+        <Testimonials />
+        <NewsLetter />
       </main>
       <Footer />
     </div>
