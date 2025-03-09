@@ -9,7 +9,7 @@ import { Button } from './ui/button'
 export default function Navbar() {
 
   return (
-        <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <header className="sticky top-0 z-50 w-full border-b bg-green-100/95 backdrop-blur supports-[backdrop-filter]:bg-green-200/60">
             <div className="container flex h-16 items-center justify-between">
               <div className="flex items-center gap-2 ml-8">
                 <Image
@@ -17,16 +17,17 @@ export default function Navbar() {
                   alt="IEEE Logo"
                   width={150}
                   height={100}
-                  className="rounded" />
+                  className="rounded"
+                />
               </div>
               <nav className="hidden md:flex items-center gap-6">
-                <Link href="#home" className="text-sm font-medium hover:underline underline-offset-4">
+                <Link href="/" className="text-sm font-medium hover:underline underline-offset-4">
                   Home
                 </Link>
                 <Link href="#about" className="text-sm font-medium hover:underline underline-offset-4">
                   About
                 </Link>
-                <Link href="#events" className="text-sm font-medium hover:underline underline-offset-4">
+                <Link href="/activities" className="text-sm font-medium hover:underline underline-offset-4">
                   Activities
                 </Link>
                 <Link href="#resources" className="text-sm font-medium hover:underline underline-offset-4">

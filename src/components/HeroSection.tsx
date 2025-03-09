@@ -1,6 +1,8 @@
+'use client'
 import { Button } from "@/components/ui/button"
 import { ChevronRight } from "lucide-react"
 import Image from "next/image"
+import { motion } from "framer-motion"
 
 export function HeroSection() {
   return (
@@ -10,7 +12,13 @@ export function HeroSection() {
   >
     <div className="container px-4 md:px-6">
       <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
-        <div className="space-y-4">
+        <motion.div 
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="space-y-4"
+        >
           <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
             IEEE Industry Applications Society & Power & Energy Society Joint Chapter
           </h1>
@@ -18,22 +26,34 @@ export function HeroSection() {
             Advancing the theory and practice of electrical engineering in industry, commerce, and power systems
             for the betterment of society.
           </p>
-          <div className="flex flex-col gap-2 min-[400px]:flex-row">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="flex flex-col gap-2 min-[400px]:flex-row"
+          >
             <Button>
               Upcoming Events
               <ChevronRight className="ml-2 h-4 w-4" />
             </Button>
             <Button variant="outline">Join Our Chapter</Button>
-          </div>
-        </div>
-        <div className="mx-auto lg:ml-auto">
+          </motion.div>
+        </motion.div>
+        <motion.div 
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mx-auto lg:ml-auto"
+        >
           <Image
             src="/Home/Cover.png"
             alt="IAS/PES Joint Chapter Cover"
             width={600}
             height={400}
             className="rounded-lg object-cover" />
-        </div>
+        </motion.div>
       </div>
     </div>
   </section>

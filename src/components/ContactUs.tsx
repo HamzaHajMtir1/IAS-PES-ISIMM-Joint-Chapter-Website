@@ -1,34 +1,81 @@
+'use client'
 import { Button } from "@headlessui/react";
 import { Mail, MapPin } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardContent } from "./ui/card";
+import { motion } from "framer-motion";
 
 export function ContactUs() {
+  const socialButtonVariants = {
+    hidden: { scale: 0, opacity: 0 },
+    visible: (i: number) => ({
+      scale: 1,
+      opacity: 1,
+      transition: {
+        delay: i * 0.1,
+        duration: 0.5,
+        type: "spring",
+        stiffness: 200
+      }
+    })
+  }
+
   return (
     <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
       <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.6 }}
+          className="flex flex-col items-center justify-center space-y-4 text-center"
+        >
           <div className="space-y-2">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-green-700">Contact Us</h2>
             <p className="max-w-[900px] text-gray-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Get in touch with our chapter leadership or connect with us on social media.
             </p>
           </div>
-        </div>
+        </motion.div>
         <div className="grid gap-6 md:grid-cols-2 lg:gap-12 mt-8">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.7 }}
+          >
           <Card className="bg-white shadow-lg rounded-lg hover:shadow-xl transition-shadow duration-300">
             <CardHeader>
               <CardTitle className="text-green-700">Contact Information</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="flex items-center gap-3">
+                <motion.div 
+                  initial={{ x: -20, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  transition={{ delay: 0.2 }}
+                  className="flex items-center gap-3"
+                >
                 <Mail className="h-5 w-5 text-gray-700" />
                 <p>iaspes@ieee-nss.org</p>
-              </div>
-              <div className="flex items-center gap-3">
+                </motion.div>
+                <motion.div 
+                  initial={{ x: -20, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  transition={{ delay: 0.3 }}
+                  className="flex items-center gap-3"
+                >
                 <MapPin className="h-5 w-5 text-gray-700" />
                 <p>IEEE NSS Office, 123 Engineering Avenue</p>
-              </div>
+                </motion.div>
               <div className="flex gap-4 mt-6">
+                  {[0, 1, 2, 3].map((index) => (
+                    <motion.div
+                      key={index}
+                      custom={index}
+                      variants={socialButtonVariants}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: false }}
+                    >
                 <Button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -46,64 +93,18 @@ export function ContactUs() {
                   </svg>
                   <span className="sr-only">Facebook</span>
                 </Button>
-                <Button className="bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-full">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="h-5 w-5"
-                  >
-                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
-                  </svg>
-                  <span className="sr-only">Instagram</span>
-                </Button>
-                <Button className="bg-blue-400 hover:bg-blue-500 text-white px-4 py-2 rounded-full">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="h-5 w-5"
-                  >
-                    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
-                  </svg>
-                  <span className="sr-only">Twitter</span>
-                </Button>
-                <Button className="bg-blue-700 hover:bg-blue-800 text-white px-4 py-2 rounded-full">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="h-5 w-5"
-                  >
-                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                    <rect width="4" height="12" x="2" y="9"></rect>
-                    <circle cx="4" cy="4" r="2"></circle>
-                  </svg>
-                  <span className="sr-only">LinkedIn</span>
-                </Button>
+                    </motion.div>
+                  ))}
               </div>
             </CardContent>
           </Card>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.7 }}
+          >
           <Card className="bg-white shadow-lg rounded-lg hover:shadow-xl transition-shadow duration-300">
             <CardHeader>
               <CardTitle className="text-green-700">Send Us a Message</CardTitle>
@@ -156,6 +157,7 @@ export function ContactUs() {
               </form>
             </CardContent>
           </Card>
+          </motion.div>
         </div>
       </div>
     </section>
