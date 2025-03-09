@@ -56,7 +56,7 @@ export function ActivitiesListComponent() {
   ]
 
   return (
-    <div className="min-h-screen bg-pink-50">
+    <div className="min-h-screen bg-green-50">
       <Header />
       <main className="container mx-auto px-4 py-6 sm:py-8">
         <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />

@@ -33,7 +33,7 @@ export default function Navbar() {
                 <Link href="#resources" className="text-sm font-medium hover:underline underline-offset-4">
                   Articles
                 </Link>
-                <Link href="#contact" className="text-sm font-medium hover:underline underline-offset-4">
+                <Link href="/contact" className="text-sm font-medium hover:underline underline-offset-4">
                   Contact
                 </Link>
               </nav>

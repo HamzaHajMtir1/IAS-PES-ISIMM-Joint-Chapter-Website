@@ -14,7 +14,7 @@ export function ActivitiesGrid({ activities }: ActivitiesGridProps) {
       whileInView={{ opacity: 1 }}
       viewport={{ once: false }}
       transition={{ duration: 0.6 }}
-      className="min-h-screen bg-gray-50 py-12"
+      className="min-h-screen bg-bg-green-50 py-12"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
@@ -29,7 +29,7 @@ export function ActivitiesGrid({ activities }: ActivitiesGridProps) {
                 scale: 1.05,
                 transition: { duration: 0.2 }
               }}
-              className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-80 sm:pt-48 lg:pt-80 cursor-pointer"
+              className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-80 sm:pt-48 lg:pt-80 cursor-pointer border-2 border-green-600"
             >
               <motion.img
                 initial={{ scale: 1.2 }}
