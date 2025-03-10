@@ -24,14 +24,15 @@ export function AboutOurJointChapter() {
             </p>
           </div>
         </motion.div>
-        <div className="grid gap-6 md:grid-cols-2 lg:gap-12 mt-8 mx-auto max-w-6xl">
+        <div className="grid gap-6 md:grid-cols-1 lg:gap-12 mt-8 mx-auto max-w-[1200px]">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: false }}
             transition={{ duration: 0.5, delay: 0.2 }}
+            className="w-full max-w-2xl mx-auto"
           >
-            <Card className="bg-white shadow-lg rounded-lg transition-all duration-500 hover:scale-105 hover:bg-green-100 hover:shadow-xl">
+            <Card className="bg-white shadow-lg rounded-lg transition-all duration-500 hover:scale-105 hover:bg-green-100 hover:shadow-xl h-full">
               <CardHeader>
                 <CardTitle className="text-green-700">IEEE IAS/PES ISIMM SBJC</CardTitle>
               </CardHeader>
