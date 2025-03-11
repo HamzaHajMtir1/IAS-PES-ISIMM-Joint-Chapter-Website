@@ -1,6 +1,40 @@
 import { MapIcon, ShieldCheckIcon } from '@heroicons/react/24/outline';
+import { useState } from 'react';
+
 
 export default function NewsLetter() {
+const [email, setEmail] = useState ('');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  // Add this submit handler to your existing form
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('loading');
+    setErrorMessage('');
+
+    try {
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) throw new Error(data.error || 'Subscription failed');
+      
+      setStatus('success');
+      setEmail('');
+      setTimeout(() => setStatus('idle'), 3000);
+    } catch (error) {
+      setStatus('error');
+      setErrorMessage(error instanceof Error ? error.message : 'Failed to subscribe');
+      setTimeout(() => setStatus('idle'), 3000);
+    }
+  };
+
+
     return (
       <div className="relative isolate overflow-hidden bg-gray-900 py-16 sm:py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -19,17 +53,28 @@ export default function NewsLetter() {
                   id="email-address"
                   name="email"
                   type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   required
                   placeholder="Enter your email"
                   autoComplete="email"
-                  className="min-w-0 flex-auto rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-green-500 sm:text-sm/6"
+                  disabled={status === 'loading'}
+                  className={`min-w-0 flex-auto rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-green-500 sm:text-sm/6 ${status === 'loading' ? 'opacity-50' : ''}`}
                 />
                 <button
                   type="submit"
-                  className="flex-none rounded-md bg-green-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-green-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-500"
+                  className={`flex-none rounded-md bg-green-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-green-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-500 ${status === 'loading' ? 'cursor-not-allowed' : ''}`}
+                  disabled={status === 'loading'}
                 >
-                  Subscribe
+                  {status === 'loading' ? 'Sending...' : 'Subscribe'}
                 </button>
+                {/* Add feedback messages */}
+                {status === 'success' && (
+                  <p className="text-green-600 mt-2">🎉 Thank you for subscribing!</p>
+                )}
+                {status === 'error' && (
+                  <p className="text-red-600 mt-2">{errorMessage}</p>
+                )}
               </div>
             </div>
             <dl className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">

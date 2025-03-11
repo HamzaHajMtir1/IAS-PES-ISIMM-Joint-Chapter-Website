@@ -56,7 +56,7 @@ export function ContactUs() {
                   className="flex items-center gap-3"
                 >
                   <Mail className="h-5 w-5 text-gray-700" />
-                  <p>iaspes@ieee-nss.org</p>
+                  <p>sbc-isimm-ia-pe@ieee.org</p>
                 </motion.div>
                 <motion.div 
                   initial={{ x: -20, opacity: 0 }}
@@ -65,7 +65,7 @@ export function ContactUs() {
                   className="flex items-center gap-3"
                 >
                   <MapPin className="h-5 w-5 text-gray-700" />
-                  <p>IEEE NSS Office, 123 Engineering Avenue</p>
+                  <p>Higher Institute of Informatics ande Mathematics of Monastir</p>
                 </motion.div>
                 <div className="flex gap-4 mt-6">
                   {[0, 1].map((index) => (
