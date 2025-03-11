@@ -3,7 +3,6 @@ import Navbar from "@/components/Navbar"
 import { HeroSection } from "@/components/HeroSection"
 import { AboutOurJointChapter } from "@/components/AboutOurJointChapter"
 import { UpcomingEvents } from "@/components/UpcomingEvents"
-import { ChapterLeadership } from "@/components/ChapterLeadership"
 import { Resources } from "@/components/Resources"
 import { Footer } from "@/components/Footer"
 import Logos from "@/components/Logos"
@@ -19,7 +18,6 @@ export default function Home() {
         <AboutOurJointChapter />
         <Logos />
         <UpcomingEvents />
-        <ChapterLeadership />
         <Resources />
         <Testimonials />
         <NewsLetter />

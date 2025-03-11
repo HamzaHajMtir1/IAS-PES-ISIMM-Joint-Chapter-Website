@@ -5,6 +5,7 @@ import  Navbar  from '@/components/Navbar';
 import React from 'react';
 import { OurJointChapter } from '@/components/About/OurJointChapter';
 import OurMainGoal from '@/components/About/OurMainGoal';
+import { ChapterLeadership } from "@/components/ChapterLeadership"
 
 const AboutPage: React.FC = () => {
     return (
@@ -13,6 +14,7 @@ const AboutPage: React.FC = () => {
             <HeaderAbout />
             <OurJointChapter />
             <OurMainGoal />
+            <ChapterLeadership />
             <Footer />
         </div>
     );
