@@ -5,7 +5,7 @@ import  Navbar  from '@/components/Navbar';
 import React from 'react';
 import { OurJointChapter } from '@/components/About/OurJointChapter';
 import OurMainGoal from '@/components/About/OurMainGoal';
-import { ChapterLeadership } from "@/components/ChapterLeadership"
+import { ChapterLeadership } from "@/components/About/ChapterLeadership"
 
 const AboutPage: React.FC = () => {
     return (

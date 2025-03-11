@@ -1,15 +1,40 @@
-'use client'
-import Navbar from "@/components/Navbar"
-import { HeroSection } from "@/components/HeroSection"
-import { AboutOurJointChapter } from "@/components/AboutOurJointChapter"
-import { UpcomingEvents } from "@/components/UpcomingEvents"
-import { Resources } from "@/components/Resources"
-import { Footer } from "@/components/Footer"
-import Logos from "@/components/Logos"
-import NewsLetter from "@/components/NewsLetter"
-import Testimonials from "@/components/Testimonials"
+"use client";
+
+import { useEffect } from "react";
+import { useLoading } from "@/context/LoadingContext";
+import { AboutOurJointChapter } from "@/components/AboutOurJointChapter";
+import { Footer } from "@/components/Footer";
+import { HeroSection } from "@/components/HeroSection";
+import Logos from "@/components/Logos";
+import Navbar from "@/components/Navbar";
+import NewsLetter from "@/components/NewsLetter";
+import { Resources } from "@/components/Resources";
+import Testimonials from "@/components/Testimonials";
+import { UpcomingEvents } from "@/components/UpcomingEvents";
 
 export default function Home() {
+  const { setIsLoading } = useLoading();
+  
+  useEffect(() => {
+    // Show loading when page starts loading
+    setIsLoading(true);
+    
+    // Hide loading when everything is loaded
+    window.addEventListener("load", () => {
+      setIsLoading(false);
+    });
+    
+    // Fallback to hide loading after a timeout
+    const timeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+    
+    return () => {
+      clearTimeout(timeout);
+      setIsLoading(false);
+    };
+  }, [setIsLoading]);
+  
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />

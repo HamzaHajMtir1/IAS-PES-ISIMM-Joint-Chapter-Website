@@ -9,15 +9,25 @@ export const metadata = {
   description: "Official website of the IEEE Industry Applications Society and Power & Energy Society Joint Chapter",
 }
 
+// Add the LoadingProvider to your layout
+import { LoadingProvider } from "@/context/LoadingContext";
+import { RouteChangeListener } from "@/components/RouteChangeListener";
+
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <LoadingProvider>
+          <RouteChangeListener />
+          {/* Your existing layout components */}
+          {children}
+        </LoadingProvider>
+      </body>
     </html>
-  )
+  );
 }
 
