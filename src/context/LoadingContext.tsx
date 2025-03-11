@@ -35,14 +35,6 @@ export function LoadingProvider({ children }: { children: ReactNode }) {
             className="fixed inset-0 bg-gradient-to-br from-green-50 to-white flex flex-col items-center justify-center z-50"
           >
             <Spinner />
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-              className="text-green-800 text-xl mt-6 font-medium"
-            >
-              Loading amazing content...
-            </motion.p>
           </motion.div>
         )}
       </AnimatePresence>

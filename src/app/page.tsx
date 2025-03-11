@@ -10,7 +10,6 @@ import Navbar from "@/components/Navbar";
 import NewsLetter from "@/components/NewsLetter";
 import { Resources } from "@/components/Resources";
 import Testimonials from "@/components/Testimonials";
-import { UpcomingEvents } from "@/components/UpcomingEvents";
 
 export default function Home() {
   const { setIsLoading } = useLoading();
@@ -27,7 +26,7 @@ export default function Home() {
     // Fallback to hide loading after a timeout
     const timeout = setTimeout(() => {
       setIsLoading(false);
-    }, 3000);
+    }, 7000);
     
     return () => {
       clearTimeout(timeout);
@@ -42,7 +41,6 @@ export default function Home() {
         <HeroSection />
         <AboutOurJointChapter />
         <Logos />
-        <UpcomingEvents />
         <Resources />
         <Testimonials />
         <NewsLetter />

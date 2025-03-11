@@ -1,4 +1,4 @@
-
+"use client";
 import {ContactUs} from '@/components/Contact/ContactUs';
 import { Footer } from '@/components/Footer';
 import  Navbar  from '@/components/Navbar';

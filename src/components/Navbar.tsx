@@ -12,13 +12,15 @@ export default function Navbar() {
         <header className="sticky top-0 z-50 w-full border-b bg-green-100/95 backdrop-blur supports-[backdrop-filter]:bg-green-200/60">
             <div className="container flex h-16 items-center justify-between">
               <div className="flex items-center gap-2 ml-8">
-                <Image
-                  src="/IASPESISIMMlogo.png"
-                  alt="IEEE Logo"
-                  width={150}
-                  height={100}
-                  className="rounded"
-                />
+                <Link href="/">
+                  <Image
+                    src="/IASPESISIMMlogo.png"
+                    alt="IEEE Logo"
+                    width={150}
+                    height={100}
+                    className="rounded"
+                  />
+                </Link>
               </div>
               <nav className="hidden md:flex items-center gap-6">
                 <Link href="/" className="text-sm font-medium hover:underline underline-offset-4">

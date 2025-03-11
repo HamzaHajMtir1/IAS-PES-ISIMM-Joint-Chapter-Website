@@ -1,4 +1,4 @@
-
+"use client";
 import {HeaderAbout} from '@/components/About/HeaderAbout';
 import { Footer } from '@/components/Footer';
 import  Navbar  from '@/components/Navbar';

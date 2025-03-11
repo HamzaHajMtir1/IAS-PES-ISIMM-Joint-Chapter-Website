@@ -5,8 +5,8 @@ import { Inter } from "next/font/google"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "IEEE IAS/PES Joint Chapter",
-  description: "Official website of the IEEE Industry Applications Society and Power & Energy Society Joint Chapter",
+  title: "IEEE IAS/PES ISIMM SBJC",
+  description: "Official website of the IEEE Industry Applications Society and Power & Energy Society ISIMM Student Branch Joint Chapter",
 }
 
 // Add the LoadingProvider to your layout

@@ -1,7 +1,7 @@
 'use client'
 import { Button } from "@headlessui/react";
 import { Calendar, Clock } from "lucide-react";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "./ui/card";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "../ui/card";
 import { motion } from "framer-motion";
 
 export function UpcomingEvents() {
