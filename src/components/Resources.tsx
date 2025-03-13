@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 export function Resources() {
   return (
     <section id="resources" className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
-      <div className="container px-4 md:px-6">
+      <div className="container px-4 md:px-6 max-w-7xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, scale: 0.5 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -22,7 +22,7 @@ export function Resources() {
             </p>
           </div>
         </motion.div>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mt-8">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mt-8 mx-auto max-w-6xl">
           <motion.div
             initial={{ opacity: 0, rotateY: 90 }}
             whileInView={{ opacity: 1, rotateY: 0 }}

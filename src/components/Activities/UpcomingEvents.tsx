@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 export function UpcomingEvents() {
   return (
     <section id="events" className="w-full py-12 md:py-24 lg:py-32 bg-green-100">
-      <div className="container px-4 md:px-6">
+      <div className="container px-4 md:px-6 max-w-7xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -22,7 +22,7 @@ export function UpcomingEvents() {
             </p>
           </div>
         </motion.div>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mt-8">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mt-8 mx-auto max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -119,17 +119,6 @@ export function UpcomingEvents() {
             </Card>
           </motion.div>
         </div>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="flex justify-center mt-8"
-        >
-          <Button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full">
-            View All Events
-          </Button>
-        </motion.div>
       </div>
     </section>
   )
