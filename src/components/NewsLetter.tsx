@@ -1,8 +1,10 @@
+'use client';
+
 import { MapIcon, ShieldCheckIcon } from '@heroicons/react/24/outline';
 import { useState } from 'react';
+import { subscribeToNewsletter } from '../actions/subscribe';
 
 export default function NewsLetter() {
-  
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
@@ -13,16 +15,11 @@ export default function NewsLetter() {
     setErrorMessage('');
 
     try {
-      const response = await fetch('api/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
-      });
+      // Call the server action directly
+      const result = await subscribeToNewsletter({ email });
 
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.error || 'Subscription failed');
+      if (!result.success) {
+        throw new Error(result.error || 'Subscription failed');
       }
 
       setStatus('success');
