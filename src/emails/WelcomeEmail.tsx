@@ -1,7 +1,7 @@
 // emails/WelcomeEmail.tsx
 import { Html, Head, Body, Container, Heading, Text } from '@react-email/components';
 
-export default function WelcomeEmail(p0: {}) {
+export default function WelcomeEmail() {
   return (
     <Html>
       <Head />
