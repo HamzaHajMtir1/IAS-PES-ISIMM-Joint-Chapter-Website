@@ -1,4 +1,4 @@
-"use client";
+'use client'
 
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -9,7 +9,7 @@ const teamMembers = [
   {
     name: "Mohamed Rayen Said",
     role: "Chair",
-    image: "/iheb.svg",
+    image: "/About/Team/avatar.jpg",
     linkedin: "https://www.linkedin.com/in/codetun/",
     github: "https://github.com/codeTun",
     portfolio: "https://digitaldreams.tn/",
@@ -18,7 +18,7 @@ const teamMembers = [
   {
     name: "Anonyme",
     role: "Vice Chair",
-    image: "/hamza.svg",
+    image: "/About/Team/avatar.jpg",
     linkedin: "https://www.linkedin.com/in/hamza-haj-mtir-3345a8220/",
     github: "https://github.com/HamzaHajMtir1",
     portfolio: "https://www.hamzahajmtir.tn/",
@@ -27,7 +27,7 @@ const teamMembers = [
   {
     name: "Anonyme",
     role: "Secretary",
-    image: "/taieb.svg",
+    image: "/About/Team/avatar.jpg",
     linkedin: "https://www.linkedin.com/in/ben-slama-taieb-b4255b243/",
     github: "https://github.com/TaiebBS",
     whatsapp: "21620123456",
@@ -35,7 +35,7 @@ const teamMembers = [
   {
     name: "Anonyme",
     role: "Treasurer",
-    image: "/hamis.png",
+    image: "/About/Team/avatar.jpg",
     linkedin: "https://www.linkedin.com/in/hamis-maaroufi-314747307/",
     github: "https://github.com/Hamis1211",
     whatsapp: "21620123456",
@@ -43,7 +43,7 @@ const teamMembers = [
   {
     name: "Hamza Haj Mtir",
     role: "Web Master",
-    image: "/yassine.svg",
+    image: "/About/Team/avatar.jpg",
     linkedin: "https://linkedin.com",
     github: "https://github.com",
     whatsapp: "21620123456",

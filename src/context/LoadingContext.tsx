@@ -19,7 +19,7 @@ export function LoadingProvider({ children }: { children: ReactNode }) {
     // Show spinner for 7 seconds
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 7000);
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, []);

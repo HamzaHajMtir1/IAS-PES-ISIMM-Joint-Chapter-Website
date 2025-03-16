@@ -20,7 +20,7 @@ export function ActivitiesGrid({ activities }: ActivitiesGridProps) {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
           {activities.map((activities, index) => (
             <motion.article
-              key={activities.subject}
+              key={activities.id} // Changed from activities.subject to activities.id
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false }}

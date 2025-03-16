@@ -1,4 +1,5 @@
-"use client";
+'use client'
+
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ActivitiesGrid } from "./ActivitiesGrid";
 import { Activities } from "./ActivitiesListComponent";

@@ -1,4 +1,7 @@
-import { Link } from "lucide-react";
+'use client';
+
+import { Facebook, Instagram, Link } from "lucide-react";
+import { BackToTop } from "./BackToTop";
 
 export const Footer = () => {
   return (
@@ -8,17 +11,15 @@ export const Footer = () => {
           © {new Date().getFullYear()} IEEE IAS/PES Joint Chapter. All rights reserved.
         </p>
         <div className="flex items-center gap-4">
-          <Link href="#" className="text-sm font-medium hover:underline underline-offset-4">
-            Privacy Policy
-          </Link>
-          <Link href="#" className="text-sm font-medium hover:underline underline-offset-4">
-            Terms of Service
-          </Link>
-          <Link href="https://ieee.org" className="text-sm font-medium hover:underline underline-offset-4">
-            IEEE.org
-          </Link>
+          <a href="https://www.facebook.com/profile.php?id=61561012416766" target="_blank" rel="noopener noreferrer" className="text-sm font-medium hover:text-blue-400 transition-colors">
+            <Facebook className="h-5 w-5" />
+          </a>
+          <a href="https://www.instagram.com/ieee_ias_pes_isimm_sbjc/" target="_blank" rel="noopener noreferrer" className="text-sm font-medium hover:text-pink-400 transition-colors">
+            <Instagram className="h-5 w-5" />
+          </a>
         </div>
       </div>
+      <BackToTop />
     </footer>
   );
 };
