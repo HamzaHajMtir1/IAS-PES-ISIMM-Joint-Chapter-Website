@@ -48,7 +48,7 @@ export function HeroSection() {
             className="mx-auto lg:ml-auto"
           >
             <Image
-              src="/Home/Cover.png"
+              src="/Home/Cover.webp"
               alt="IAS/PES Joint Chapter Cover"
               width={600}
               height={400}

@@ -7,7 +7,7 @@ export default function Testimonials() {
         <div className="mx-auto max-w-2xl lg:max-w-4xl">
           <img
             alt=""
-            src="/IASPESISIMMlogo.png"
+            src="/IASPESISIMMlogo.webp"
             className="mx-auto h-18 w-auto mb-10"
           />
           <figure className="mt-10">

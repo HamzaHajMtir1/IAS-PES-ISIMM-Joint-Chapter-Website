@@ -44,7 +44,7 @@ export function Spinner({ size = 120 }: SpinnerProps) {
           }}
         >
           <Image
-            src="/IASPESISIMMlogo.png" 
+            src="/IASPESISIMMlogo.webp" 
             alt="IAS-PES Logo"
             width={size * 0.6}
             height={size * 0.6}

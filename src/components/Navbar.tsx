@@ -21,7 +21,7 @@ export default function Navbar() {
         <div className="flex items-center gap-2">
           <Link href="/">
             <Image
-              src="/IASPESISIMMlogo.png"
+              src="/IASPESISIMMlogo.webp"
               alt="IEEE Logo"
               width={150}
               height={100}
@@ -118,7 +118,7 @@ export default function Navbar() {
               <div className="flex items-center gap-2">
                 <Link href="/" onClick={() => setIsMenuOpen(false)}>
                   <Image
-                    src="/IASPESISIMMlogo.png"
+                    src="/IASPESISIMMlogo.webp"
                     alt="IEEE Logo"
                     width={150}
                     height={100}

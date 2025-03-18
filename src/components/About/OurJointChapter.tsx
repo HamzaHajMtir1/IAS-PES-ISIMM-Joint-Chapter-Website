@@ -38,7 +38,7 @@ export function OurJointChapter() {
               <CardContent>
                 <div className="flex items-center justify-center mb-4">
                   <Image
-                    src="/About/ias.png"
+                    src="/About/ias.webp"
                     alt="IAS Logo"
                     width={200}
                     height={100}
@@ -69,7 +69,7 @@ export function OurJointChapter() {
               <CardContent>
                 <div className="flex items-center justify-center mb-4">
                   <Image
-                    src="/About/pes.png"
+                    src="/About/pes.webp"
                     alt="PES Logo"
                     width={200}
                     height={100}

@@ -13,7 +13,7 @@ export default function Logos() {
             >
               <img
                 alt="IEEE Industry Applications Society"
-                src="/About/ias.png"
+                src="/About/ias.webp"
                 width={316}
                 height={96}
                 className="max-h-24 w-full object-contain transition-transform duration-500 hover:scale-125"
@@ -27,7 +27,7 @@ export default function Logos() {
             >
               <img
                 alt="IEEE Power & Energy Society"
-                src="/About/pes.png"
+                src="/About/pes.webp"
                 width={316}
                 height={96}
                 className="max-h-24 w-full object-contain transition-transform duration-500 hover:scale-125"
@@ -41,7 +41,7 @@ export default function Logos() {
             >
               <img
                 alt="IEEE Tunisia Section"
-                src="/About/IEEEsection.png"
+                src="/About/IEEEsection.webp"
                 width={316}
                 height={96}
                 className="max-h-24 w-full object-contain transition-transform duration-500 hover:scale-125"
@@ -55,7 +55,7 @@ export default function Logos() {
             >
               <img
                 alt="IEEE ISIMM Student Branch"
-                src="/About/IEEEisimm.png"
+                src="/About/IEEEisimm.webp"
                 width={300}
                 height={96}
                 className="max-h-24 w-full object-contain transition-transform duration-500 hover:scale-125"
@@ -69,7 +69,7 @@ export default function Logos() {
             >
               <img
                 alt="IEEE"
-                src="/About/IEEElogo.png"
+                src="/About/IEEElogo.webp"
                 width={300}
                 height={96}
                 className="max-h-24 w-full object-contain transition-transform duration-500 hover:scale-125"

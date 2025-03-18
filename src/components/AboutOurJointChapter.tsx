@@ -40,7 +40,7 @@ export function AboutOurJointChapter() {
           >
             <div className="relative w-full max-w-md">
               <Image
-                src="/IASPESISIMMlogo.png"
+                src="/IASPESISIMMlogo.webp"
                 alt="IEEE Industry Applications Society"
                 width={500}
                 height={400}

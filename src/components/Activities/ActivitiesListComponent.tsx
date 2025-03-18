@@ -23,49 +23,49 @@ export function ActivitiesListComponent() {
       name: "Dr. Emily Chen",
       subject: "Web", 
       date: "Breast Cancer",
-      imageUrl: "/test.png"
+      imageUrl: "/test.webp"
     },
     {
       id: "2",
       name: "Dr. Michael Johnson",
       subject: "Web",
       date: "Lung Cancer",
-      imageUrl: "/test.png"
+      imageUrl: "/test.webp"
     },
     {
       id: "3",
       name: "Dr. Sarah Thompson",
       subject: "Web",
       date: "Cancer Patient Support",
-      imageUrl: "/test.png"
+      imageUrl: "/test.webp"
     },
     {
       id: "4",
       name: "Dr. Alex Martinez",
       subject: "Web",
       date: "Hematologic Oncology",
-      imageUrl: "/test.png"
+      imageUrl: "/test.webp"
     },
     {
       id: "5",
       name: "Dr. David Lee",
       subject: "Cloud",
       date: "Pediatric Oncology",
-      imageUrl: "/test.png"
+      imageUrl: "/test.webp"
     },
     {
       id: "6",
       name: "Dr. Rachel Green",
       subject: "Cloud",
       date: "Grief Counseling",
-      imageUrl: "/test.png"
+      imageUrl: "/test.webp"
     },
     {
       id: "7",
       name: "Dr. Alex Martinez",
       subject: "Blockchain",
       date: "Hematologic Oncology",
-      imageUrl: "/test.png"
+      imageUrl: "/test.webp"
     }
   ]
 
