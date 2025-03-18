@@ -8,7 +8,6 @@ import { HeroSection } from "@/components/HeroSection";
 import Logos from "@/components/Logos";
 import Navbar from "@/components/Navbar";
 import NewsLetter from "@/components/NewsLetter";
-import { Resources } from "@/components/Resources";
 import Testimonials from "@/components/Testimonials";
 
 export default function Home() {
@@ -41,7 +40,6 @@ export default function Home() {
         <HeroSection />
         <AboutOurJointChapter />
         <Logos />
-        <Resources />
         <Testimonials />
         <NewsLetter />
       </main>

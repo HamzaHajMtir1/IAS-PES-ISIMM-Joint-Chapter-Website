@@ -1,12 +1,12 @@
 'use client'
 import { Button } from "@headlessui/react";
 import { BookOpen, Users, Calendar } from "lucide-react";
-import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "./ui/card";
+import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "../ui/card";
 import { motion } from "framer-motion";
 
 export function Resources() {
   return (
-    <section id="resources" className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
+    <section id="resources" className="w-full py-12 md:py-24 lg:py-32 bg-white">
       <div className="container px-4 md:px-6 max-w-7xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, scale: 0.5 }}

@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import { ActivitiesListComponent } from '@/components/Activities/ActivitiesListComponent';
 import { Footer } from '@/components/Footer';
 import  Navbar  from '@/components/Navbar';

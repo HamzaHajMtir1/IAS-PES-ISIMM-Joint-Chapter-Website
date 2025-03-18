@@ -66,11 +66,11 @@ export default function Navbar() {
             href="/resources" 
             className={`text-sm font-medium px-3 py-2 rounded-md transition-colors ${
               pathname === '/resources' 
-                ? 'bg-green-600/50 backdrop-blur-sm text-black font-bold' 
+                 ? 'bg-green-600/50 backdrop-blur-sm text-black font-bold' 
                 : 'hover:underline underline-offset-4'
             }`}
           >
-            Articles
+            Ressouces
           </Link>
           <Link 
             href="/contact" 
@@ -112,7 +112,7 @@ export default function Navbar() {
       
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="fixed inset-0 z-50 bg-white backdrop-blur-sm md:hidden">
+        <div className="fixed inset-0 z-50 !bg-white md:hidden">
           <div className="container h-full flex flex-col max-w-7xl mx-auto px-4 sm:px-6">
             <div className="flex justify-between items-center h-16 border-b">
               <div className="flex items-center gap-2">
