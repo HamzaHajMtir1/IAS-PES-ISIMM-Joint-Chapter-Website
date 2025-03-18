@@ -1,4 +1,5 @@
 'use client'
+import { useState } from 'react';
 import { Button } from "@headlessui/react";
 import { Mail, MapPin } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardContent } from "../ui/card";
@@ -18,7 +19,65 @@ export function ContactUs() {
       }
     })
   }
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
+  try {
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError('');
+    setSuccess(false);
 
+    // Basic validation
+    if (!name || !email || !message) {
+      setError('All fields are required');
+      return;
+    }
+
+    if (!/\S+@\S+\.\S+/.test(email)) {
+      setError('Please enter a valid email address');
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+          to: 'sbc-isimm-ia-pe@ieee.org'
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
+      setSuccess(true);
+      setName('');
+      setEmail('');
+      setMessage('');
+    } catch (err) {
+      setError('Failed to send message. Please try again later.');
+    } finally {
+      setLoading(false);
+    }
+    setSuccessMessage('Your message has been sent successfully! We will respond shortly.');
+    setTimeout(() => setSuccessMessage(''), 5000);
+  };
+  }catch (err) {
+    setError('There was an error sending your message. Please try again or contact us directly at sbc-isimm-ia-pe@ieee.org');
+  };
   return (
     <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-green-50">
       <div className="container px-4 md:px-6">

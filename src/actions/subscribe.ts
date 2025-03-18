@@ -1,12 +1,12 @@
 'use server';
 
-import { PrismaClient } from '@prisma/client';
-import { Resend } from 'resend';
-import { z } from 'zod';
 import WelcomeEmail from '../emails/WelcomeEmail';
+import { PrismaClient } from '@prisma/client';
+import { z } from 'zod';
+import sendgrid from "@sendgrid/mail";
+import { render } from '@react-email/components';
 
 const prisma = new PrismaClient();
-const resend = new Resend(process.env.RESEND_API_KEY);
 const schema = z.object({
   email: z.string().email('Please enter a valid email address'),
 });
@@ -15,8 +15,12 @@ export async function subscribeToNewsletter(formData: FormData | { email: string
   try {
     // Extract email from either FormData or direct object
     const email = formData instanceof FormData 
-      ? formData.get('email') as string 
+      ? (formData.get('email') as string | null) ?? '' 
       : formData.email;
+
+    sendgrid.setApiKey(process.env.SENDGRID_API_KEY || '');
+    const emailHtml = await render(WelcomeEmail());
+
     
     // Validate email
     schema.parse({ email });
@@ -37,23 +41,24 @@ export async function subscribeToNewsletter(formData: FormData | { email: string
     const newSubscriber = await prisma.subscriber.create({
       data: { email },
     });
-
-    // Send welcome email
-    const { data, error } = await resend.emails.send({
-      from: 'IAS-PES-ISIMM Newsletter <onboarding@resend.dev>',
-      to: process.env.NODE_ENV === 'production' ? email : 'srayen15@gmail.com', // Use verified email in development
+    const options = {
+      from: `IAS-PES-ISIMM Newsletter <${process.env.SENDER_EMAIL}>`,
+      to: newSubscriber.email,
       subject: 'Welcome to Our Newsletter!',
-      react: WelcomeEmail(),
+      html: emailHtml,};
+    // Send welcome emailddbrbrjierijger
+    sendgrid.send(options,)
+    .then(() => {}, error => {
+      console.error(error);
+  
+      if (error.response) {
+        console.error(error.response.body)
+        return {
+          success: false,
+          error: 'Failed to send welcome email'
+        };
+      }
     });
-
-    if (error) {
-      console.error('Resend error:', error);
-      return {
-        success: false,
-        error: 'Failed to send welcome email'
-      };
-    }
-
     return {
       success: true,
       data: newSubscriber
