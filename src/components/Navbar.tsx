@@ -89,7 +89,7 @@ export default function Navbar() {
         </Button>
         
         {/* Mobile Menu Button */}
-        <Button variant="outline" size="icon" className="md:hidden" onClick={toggleMenu}>
+        <Button variant="outline" size="icon" className="md:hidden bg-white" onClick={toggleMenu}>
           <span className="sr-only">Toggle menu</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -112,7 +112,7 @@ export default function Navbar() {
       
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="fixed inset-0 z-50 !bg-white md:hidden">
+        <div className="fixed inset-0 z-50 !bg-green-100/95 md:hidden">
           <div className="container h-full flex flex-col max-w-7xl mx-auto px-4 sm:px-6">
             <div className="flex justify-between items-center h-16 border-b">
               <div className="flex items-center gap-2">
@@ -131,7 +131,7 @@ export default function Navbar() {
               </Button>
             </div>
             
-            <nav className="flex flex-col items-center justify-center gap-8 flex-1 pb-16">
+            <nav className="flex flex-col items-center justify-center gap-8 flex-1 pb-16 bg-green-100/95">
               <Link 
                 href="/" 
                 className={`text-lg font-medium px-4 py-2 rounded-md transition-colors w-full text-center ${
