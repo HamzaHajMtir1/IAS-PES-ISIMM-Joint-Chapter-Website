@@ -41,7 +41,7 @@ export default function Logos() {
             >
               <img
                 alt="IEEE Tunisia Section"
-                src="/About/IEEElogo.webp"
+                src="/About/IEEESection.png"
                 width={316}
                 height={96}
                 className="max-h-24 w-full object-contain transition-transform duration-500 hover:scale-125"
