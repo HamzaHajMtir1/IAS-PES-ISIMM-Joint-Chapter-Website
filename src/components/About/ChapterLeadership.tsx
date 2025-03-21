@@ -9,45 +9,45 @@ const teamMembers = [
   {
     name: "Mohamed Rayen Said",
     role: "Chair",
-    image: "/About/Team/avatar.webp",
-    linkedin: "https://www.linkedin.com/in/codetun/",
-    github: "https://github.com/codeTun",
-    portfolio: "https://digitaldreams.tn/",
-    whatsapp: "21620123456",
+    image: "/About/Team/RayenSaid.png",
+    linkedin: "https://www.linkedin.com/in/mohamed-rayen-said-b55572258/",
+    Facebook: "https://www.facebook.com/rayen.said.9047",
+    portfolio: "#",
+    whatsapp: "21629199476",
   },
   {
     name: "Anonyme",
     role: "Vice Chair",
     image: "/About/Team/anonyme.webp",
-    linkedin: "https://www.linkedin.com/in/hamza-haj-mtir-3345a8220/",
-    github: "https://github.com/HamzaHajMtir1",
-    portfolio: "https://www.hamzahajmtir.tn/",
-    whatsapp: "21620123456",
+    linkedin: "#",
+    Facebook: "https://github.com/HamzaHajMtir1",
+    portfolio: "#",
+    whatsapp: "#",
   },
   {
     name: "Anonyme",
     role: "Secretary",
     image: "/About/Team/anonyme.webp",
-    linkedin: "https://www.linkedin.com/in/ben-slama-taieb-b4255b243/",
-    github: "https://github.com/TaiebBS",
-    whatsapp: "21620123456",
+    linkedin: "#",
+    Facebook: "#",
+    whatsapp: "#",
   },
   {
     name: "Anonyme",
     role: "Treasurer",
     image: "/About/Team/anonyme.webp",
-    linkedin: "https://www.linkedin.com/in/hamis-maaroufi-314747307/",
-    github: "https://github.com/Hamis1211",
-    whatsapp: "21620123456",
+    linkedin: "#",
+    Facebook: "#",
+    whatsapp: "#",
   },
   {
     name: "Hamza Haj Mtir",
     role: "Web Master",
-    image: "/About/Team/avatar.webp",
+    image: "/About/Team/HamzaHajMtir.png",
     linkedin: "https://www.linkedin.com/in/hamza-haj-mtir-3345a8220/",
-    github: "https://github.com/HamzaHajMtir1",
+    Facebook: "https://www.facebook.com/profile.php?id=100009080517074",
     portfolio: "https://www.hamzahajmtir.tn/",
-    whatsapp: "21620123456",
+    whatsapp: "21624222310",
   },
 ];
 
@@ -94,19 +94,22 @@ export function ChapterLeadership() {
                 <p className="text-white mb-4">{member.role}</p>
                 <div className="flex space-x-4">
                   <a
-                    href={member.github}
-                    className="text-gray-300 hover:text-green-400 transition-colors"
+                    href={member.Facebook}
+                    target="_blank"
+                    className="text-gray-300 hover:text-blue-400 transition-colors"
                   >
                     <Facebook className="w-5 h-5" />
                   </a>
                   <a
                     href={member.linkedin}
-                    className="text-gray-300 hover:text-green-400 transition-colors"
+                    target="_blank"
+                    className="text-gray-300 hover:text-blue-500 transition-colors"
                   >
                     <Linkedin className="w-5 h-5" />
                   </a>
                   <a
                     href={`https://wa.me/${member.whatsapp}`}
+                    target="_blank"
                     className="text-gray-300 hover:text-green-400 transition-colors"
                   >
                     <FaWhatsapp className="w-5 h-5" />

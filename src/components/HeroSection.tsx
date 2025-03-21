@@ -40,7 +40,7 @@ export function HeroSection() {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="flex flex-col gap-2 min-[400px]:flex-row"
             >
-              <Button onClick={handleButtonClick} className="w-full md:w-auto">
+              <Button onClick={handleButtonClick} className="w-full md:w-auto cursor-pointer">
                 Upcoming Events
                 <ChevronRight className="ml-2 h-4 w-4" aria-hidden="true" />
               </Button>

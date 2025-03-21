@@ -56,7 +56,7 @@ export function ContactUs() {
                   className="flex items-center gap-3"
                 >
                   <Mail className="h-5 w-5 text-gray-700" />
-                  <p>iaspes@ieee-nss.org</p>
+                  <p>sbc-isimm-ia-pe@ieee.org</p>
                 </motion.div>
                 <motion.div 
                   initial={{ x: -20, opacity: 0 }}
@@ -65,10 +65,10 @@ export function ContactUs() {
                   className="flex items-center gap-3"
                 >
                   <MapPin className="h-5 w-5 text-gray-700" />
-                  <p>IEEE NSS Office, 123 Engineering Avenue</p>
+                  <p>Tunisia, Monastir, 5000</p>
                 </motion.div>
                 <div className="flex gap-4 mt-6">
-                  {[0, 1].map((index) => (
+                  {[0, 1, 2].map((index) => (
                     <motion.div
                       key={index}
                       custom={index}
@@ -118,6 +118,27 @@ export function ContactUs() {
                               <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
                             </svg>
                             <span className="sr-only">Instagram</span>
+                          </Button>
+                        </a>
+                      )}
+                       {index === 2 && (
+                        <a href="https://www.linkedin.com/company/ieee-ias-pes-isimm-sbjc/" target="_blank" rel="noopener noreferrer">
+                          <Button className="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-full cursor-pointer">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              className="h-5 w-5"
+                            >
+                              <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"></path>
+                            </svg>
+                            <span className="sr-only">Linkedin</span>
                           </Button>
                         </a>
                       )}
