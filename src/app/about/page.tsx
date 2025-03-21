@@ -6,6 +6,7 @@ import React from 'react';
 import { OurJointChapter } from '@/components/About/OurJointChapter';
 import OurMainGoal from '@/components/About/OurMainGoal';
 import { ChapterLeadership } from "@/components/About/ChapterLeadership"
+import WhatWeDo from '@/components/About/WhatWeDo';
 
 const AboutPage: React.FC = () => {
     return (
@@ -13,6 +14,7 @@ const AboutPage: React.FC = () => {
             <Navbar />
             <HeaderAbout />
             <OurJointChapter />
+            <WhatWeDo />
             <OurMainGoal />
             <ChapterLeadership />
             <Footer />

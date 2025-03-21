@@ -49,13 +49,13 @@ export function ResourcesHero() {
               transition={{ duration: 0.5, delay: 0.6 }}
               className="flex flex-wrap gap-4 mt-4"
             >
-              <a href="#technical-papers" className="inline-flex items-center justify-center rounded-md bg-green-600 px-6 py-3 text-white font-medium hover:bg-green-700 transition-colors">
+              <a href="https://resourcecenter.ias.ieee.org/" target='_blanck' className="inline-flex items-center justify-center rounded-md bg-green-600 px-6 py-3 text-white font-medium hover:bg-green-700 transition-colors">
                 <FileText className="mr-2 h-5 w-5" />
-                Technical Papers
+                IAS Resource Center
               </a>
-              <a href="#resources" className="inline-flex items-center justify-center rounded-md border border-green-600 px-6 py-3 text-green-600 font-medium hover:bg-green-50 transition-colors">
+              <a href="https://resourcecenter.ieee-pes.org/" target='_blanck' className="inline-flex items-center justify-center rounded-md border border-green-600 px-6 py-3 text-green-600 font-medium hover:bg-green-50 transition-colors">
                 <BookOpen className="mr-2 h-5 w-5" />
-                All Resources
+                PES Resource Center
               </a>
             </motion.div>
           </motion.div>

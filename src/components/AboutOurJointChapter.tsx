@@ -7,7 +7,7 @@ import { motion } from "framer-motion"
 
 export function AboutOurJointChapter() {
   return (
-    <section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-white to-green-50">
+    <section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-green-50 to-white">
       <div className="container px-4 md:px-6 mx-auto max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div 
@@ -20,13 +20,9 @@ export function AboutOurJointChapter() {
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-green-700">About us</h2>
             <div className="space-y-4">
               <p className="text-gray-700">
-              The vision of the IEEE Industry Applications Society is the advancement of the theory and
-              practice of electrical and electronic engineering in the development, design, manufacture 
-              and application of electrical systems, apparatus, devices and controls to the processes and 
-              equipment of industry and commerce; the promotion of safe, reliable and economical installations;
-              industry leadership in energy conservation and environmental health and safety issues; 
-              the creation of voluntary engineering standards and recommended practices; and the professional 
-              development of its membership.
+              The<strong> IEEE Industry Applications Society</strong> advances electrical and electronic engineering in industrial and commercial environments, with a focus on automation, energy systems, smart manufacturing, and process industries. 
+              Similarly, the<strong> IEEE Power & Energy Society</strong> drives progress in power engineering, emphasizing electric power generation, transmission, distribution, and sustainable energy solutions. 
+              Building on these missions, the<strong> IEEE IAS PES ISIMM Chapter</strong> connects students with industry through hands-on learning experiences, technical events, and networking opportunities, fostering innovation and professional growth in industrial and power engineering fields.
               </p>
             </div>
           </motion.div>
@@ -41,7 +37,7 @@ export function AboutOurJointChapter() {
             <div className="relative w-full max-w-md">
               <Image
                 src="/IASPESISIMMlogo.webp"
-                alt="IEEE Industry Applications Society"
+                alt="IEEE IAS PES ISIMM Chapter Logo"
                 width={500}
                 height={400}
                 className="rounded-lg shadow-xl object-contain"

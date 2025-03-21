@@ -1,3 +1,5 @@
+'use client';
+
 import { MapIcon, ShieldCheckIcon } from '@heroicons/react/24/outline';
 
 export default function NewsLetter() {
@@ -8,8 +10,8 @@ export default function NewsLetter() {
             <div className="max-w-xl lg:max-w-lg">
               <h2 className="text-4xl font-semibold tracking-tight text-white">Subscribe to our newsletter</h2>
               <p className="mt-4 text-lg text-gray-300">
-                Nostrud amet eu ullamco nisi aute in ad minim nostrud adipisicing velit quis. Duis tempor incididunt
-                dolore.
+                Join our newsletter to receive updates on upcoming activities, technical workshops, 
+                industry insights, and opportunities within the IEEE IAS & PES ISIMM Student Branch Joint Chapter.
               </p>
               <div className="mt-6 flex max-w-md gap-x-4">
                 <label htmlFor="email-address" className="sr-only">
@@ -39,7 +41,7 @@ export default function NewsLetter() {
                 </div>
                 <dt className="mt-4 text-base font-semibold text-white">Weekly articles</dt>
                 <dd className="mt-2 text-base/7 text-gray-400">
-                  Non laboris consequat cupidatat laborum magna. Eiusmod non irure cupidatat duis commodo amet.
+                  Weekly insights on trends, innovations, and applications in electrical engineering.
                 </dd>
               </div>
               <div className="flex flex-col items-start">
@@ -48,7 +50,7 @@ export default function NewsLetter() {
                 </div>
                 <dt className="mt-4 text-base font-semibold text-white">No spam</dt>
                 <dd className="mt-2 text-base/7 text-gray-400">
-                  Officia excepteur ullamco ut sint duis proident non adipisicing. Voluptate incididunt anim.
+                  We respect your inbox. Only relevant updates, no unnecessary emails.
                 </dd>
               </div>
             </dl>

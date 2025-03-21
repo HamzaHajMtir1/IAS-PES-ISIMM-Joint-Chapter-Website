@@ -30,13 +30,13 @@ export function BackToTop() {
   return (
     <Button
       onClick={scrollToTop}
-      className={`fixed bottom-6 right-6 p-2 rounded-full bg-green-600 hover:bg-green-700 text-white shadow-lg z-50 transition-opacity duration-300 cursor-pointer ${
+      className={`fixed bottom-4 right-4 sm:bottom-6 sm:right-6 p-2 rounded-full bg-green-600 hover:bg-green-700 text-white shadow-lg z-50 transition-opacity duration-300 cursor-pointer ${
         isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
       }`}
       size="icon"
       aria-label="Back to top"
     >
-      <ChevronUp className="h-5 w-5" />
+      <ChevronUp className="h-4 w-4 sm:h-5 sm:w-5" />
     </Button>
   )
 }

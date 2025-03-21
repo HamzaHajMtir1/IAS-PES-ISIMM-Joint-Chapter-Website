@@ -14,7 +14,9 @@ export default function Navbar() {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
   }
-
+  const handleClick = () => {
+    window.open('https://forms.gle/QDkCfDiaYVT2thez7', '_blank');
+  };
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-green-100/95 backdrop-blur supports-[backdrop-filter]:bg-green-200/60">
       <div className="container flex h-16 items-center justify-between max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -70,7 +72,7 @@ export default function Navbar() {
                 : 'hover:underline underline-offset-4'
             }`}
           >
-            Ressouces
+            Resources
           </Link>
           <Link 
             href="/contact" 
@@ -84,8 +86,8 @@ export default function Navbar() {
           </Link>
         </nav>
         
-        <Button variant="outline" size="sm" className="hidden md:flex bg-[#00943a] text-white">
-          Join IEEE IAS/PES
+        <Button variant="outline" size="sm" className="hidden md:flex bg-[#00943a] text-white cursor-pointer" onClick={handleClick} >
+          Join our Chapter
         </Button>
         
         {/* Mobile Menu Button */}
@@ -191,8 +193,11 @@ export default function Navbar() {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="bg-[#00943a] text-white mt-4 w-full max-w-xs"
-                onClick={() => setIsMenuOpen(false)}
+                className="bg-[#00943a] text-white mt-4 w-full max-w-xs cursor-pointer"
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  window.open('https://forms.google.com/forms/d/e/1FAIpQLSfmO78WXTAFVkibmMfBc0TzzzyOgz8EtZZhFbnXimu0-1insQ/viewform', '_blank');
+                }}
               >
                 Join IEEE IAS/PES
               </Button>

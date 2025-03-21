@@ -31,17 +31,16 @@ export function UpcomingEvents() {
           >
             <Card className="bg-white shadow-lg rounded-lg">
               <CardHeader>
-                <CardTitle className="text-green-700">Technical Seminar: Smart Grid Technologies</CardTitle>
-                <CardDescription>Virtual Event</CardDescription>
+                <CardTitle className="text-green-700">PES Day 2025 Celebration</CardTitle>
+                <CardDescription>ISIMM</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-700 mb-4">
-                  Join industry experts as they discuss the latest advancements in smart grid technologies and their
-                  applications.
+                  Join us in our PES Day celebration where you can find us at ISIMM to findout more about IEEE PES and our Chapter .
                 </p>
                 <div className="flex items-center gap-2 text-sm text-gray-700">
                   <Calendar className="h-4 w-4" />
-                  <span>March 15, 2025</span>
+                  <span>April 22, 2025</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-gray-700 mt-2">
                   <Clock className="h-4 w-4" />
@@ -64,7 +63,7 @@ export function UpcomingEvents() {
             <Card className="bg-white shadow-lg rounded-lg">
               <CardHeader>
                 <CardTitle className="text-green-700">Workshop: Industrial IoT Applications</CardTitle>
-                <CardDescription>IEEE NSS Office</CardDescription>
+                <CardDescription>Virtual</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-700 mb-4">
@@ -72,7 +71,7 @@ export function UpcomingEvents() {
                 </p>
                 <div className="flex items-center gap-2 text-sm text-gray-700">
                   <Calendar className="h-4 w-4" />
-                  <span>April 10, 2025</span>
+                  <span>April, 2025</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-gray-700 mt-2">
                   <Clock className="h-4 w-4" />
@@ -94,13 +93,12 @@ export function UpcomingEvents() {
           >
             <Card className="bg-white shadow-lg rounded-lg">
               <CardHeader>
-                <CardTitle className="text-green-700">Annual Joint Chapter Meeting</CardTitle>
-                <CardDescription>Grand Conference Center</CardDescription>
+                <CardTitle className="text-green-700">Edge Tech Accelerator</CardTitle>
+                <CardDescription>Virtual</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-700 mb-4">
-                  Our annual meeting featuring keynote speakers, technical presentations, and networking
-                  opportunities.
+                This bootcamp explores edge computing technologies, enabling real-time data processing for fast and efficient systems.
                 </p>
                 <div className="flex items-center gap-2 text-sm text-gray-700">
                   <Calendar className="h-4 w-4" />

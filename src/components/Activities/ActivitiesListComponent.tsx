@@ -10,8 +10,11 @@ export interface Activities {
   id: string; // Add a unique ID field
   name: string;
   subject: string;
-  date: string;
   imageUrl: string;
+  desc: string;
+  date: string;
+  location: string;
+  link: string;
 }
 
 export function ActivitiesListComponent() {
@@ -20,57 +23,38 @@ export function ActivitiesListComponent() {
   const activities: Activities[] = [
     {
       id: "1", // Add unique IDs to each activity
-      name: "Dr. Emily Chen",
-      subject: "Web", 
-      date: "Breast Cancer",
-      imageUrl: "/test.webp"
+      name: "PES",
+      subject: "PES Day Celebration 2024",
+      imageUrl: "/eveents/PESDay2024.webp",
+      desc: "Our Joint Chapter has celebrated, in collaboration wwith other PES SBCs in Tunisia, organizing the Tunisia Greenwheels Forum.",
+      date: "April 22-24, 2024",
+      location: "Virtual",
+      link: "https://www.facebook.com/profile.php?id=61558418187428",
     },
     {
       id: "2",
-      name: "Dr. Michael Johnson",
-      subject: "Web",
-      date: "Lung Cancer",
-      imageUrl: "/test.webp"
+      name: "IAS",
+      subject: "2024 IAS Annual Meeting",
+      imageUrl: "/eveents/IASAM2024.webp",
+      desc: "The IEEE IAS PES ISIMM SBJC chair's active participation in the prestigious IAS Annual Meeting and ECCE highlights the chapter's dedication to excellence.",
+      date: "October 20-25, 2024",
+      location: "Phoenix, Arizona",
+      link: "https://ias-am.ieee.org/2025/",
     },
     {
       id: "3",
-      name: "Dr. Sarah Thompson",
-      subject: "Web",
-      date: "Cancer Patient Support",
-      imageUrl: "/test.webp"
+      name: "IAS",
+      subject: "IAC Info Session",
+      imageUrl: "/eveents/IACInfoSession.webp",
+      desc: "An info session conducted by our ambassador for the IEEE IAS 60th Anniversary Conference organized by the IEEE IAS ISI SBC.",
+      date: "March 13, 2025",
+      location: "Virtual",
+      link: "https://www.facebook.com/share/p/1BLFEzsVdt/",
     },
-    {
-      id: "4",
-      name: "Dr. Alex Martinez",
-      subject: "Web",
-      date: "Hematologic Oncology",
-      imageUrl: "/test.webp"
-    },
-    {
-      id: "5",
-      name: "Dr. David Lee",
-      subject: "Cloud",
-      date: "Pediatric Oncology",
-      imageUrl: "/test.webp"
-    },
-    {
-      id: "6",
-      name: "Dr. Rachel Green",
-      subject: "Cloud",
-      date: "Grief Counseling",
-      imageUrl: "/test.webp"
-    },
-    {
-      id: "7",
-      name: "Dr. Alex Martinez",
-      subject: "Blockchain",
-      date: "Hematologic Oncology",
-      imageUrl: "/test.webp"
-    }
   ]
 
   return (
-    <div className="min-h-screen bg-green-50">
+    <div className="min-h-screen bg-gradient-to-b from-green-50 to-green-100">
       <Header />
       <main className="container mx-auto px-4 py-6 sm:py-8 max-w-7xl">
         <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />

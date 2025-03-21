@@ -4,6 +4,14 @@ import { BookOpen, Users, Calendar } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "../ui/card";
 import { motion } from "framer-motion";
 
+const technav = () => {
+  window.open('https://technav.ieee.org/', '_blank');};
+const xplore = () => {
+  window.open('https://ieeexplore.ieee.org/Xplore/home.jsp', '_blank');};
+const IAS = () => {
+  window.open('https://ias.ieee.org/member-development/membership/', '_blank');};
+const PES = () => {
+  window.open('https://ieee-pes.org/membership-chapters/membership-benefits-grades/', '_blank');};
 export function Resources() {
   return (
     <section id="resources" className="w-full py-12 md:py-24 lg:py-32 bg-white">
@@ -42,7 +50,7 @@ export function Resources() {
                 </p>
               </CardContent>
               <CardFooter>
-                <Button className="w-full bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full">
+                <Button onClick={xplore} className="w-full bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full">
                   Explore Publications
                 </Button>
               </CardFooter>
@@ -65,8 +73,11 @@ export function Resources() {
                 <p className="text-gray-700">Learn about the benefits of joining IEEE and our societies.</p>
               </CardContent>
               <CardFooter>
-                <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full">
-                  View Benefits
+                <Button onClick={IAS} className="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full m-1">
+                  IAS benefits
+                </Button>
+                <Button onClick={PES} className="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full m-1">
+                  PES benefits
                 </Button>
               </CardFooter>
             </Card>
@@ -81,16 +92,16 @@ export function Resources() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-green-700">
                   <Calendar className="h-5 w-5" />
-                  Past Events
+                  IEEE Technology Navigator
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-700">
-                  Access recordings and materials from our previous events and workshops.
+                  Access recordings and materials from 8000 engineering fields.
                 </p>
               </CardContent>
               <CardFooter>
-                <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-full">
+                <Button onClick={technav} className="w-full bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-full">
                   View Archive
                 </Button>
               </CardFooter>
