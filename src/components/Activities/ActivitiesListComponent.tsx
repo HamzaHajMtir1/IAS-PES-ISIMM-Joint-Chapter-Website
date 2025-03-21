@@ -25,7 +25,7 @@ export function ActivitiesListComponent() {
       id: "1", // Add unique IDs to each activity
       name: "PES",
       subject: "PES Day Celebration 2024",
-      imageUrl: "/eveents/PESDay2024.webp",
+      imageUrl: "/eveents/pesday2024.webp",
       desc: "Our Joint Chapter has celebrated, in collaboration wwith other PES SBCs in Tunisia, organizing the Tunisia Greenwheels Forum.",
       date: "April 22-24, 2024",
       location: "Virtual",
