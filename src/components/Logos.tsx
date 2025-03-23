@@ -34,20 +34,6 @@ export default function Logos() {
               />
             </a>
             <a 
-              href="https://ieee.tn/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="col-span-2 lg:col-span-1"
-            >
-              <img
-                alt="IEEE Tunisia Section"
-                src="/About/IEEESection.png"
-                width={316}
-                height={96}
-                className="max-h-24 w-full object-contain transition-transform duration-500 hover:scale-125"
-              />
-            </a>
-            <a 
               href="http://www.isimm.rnu.tn/public/" 
               target="_blank" 
               rel="noopener noreferrer"
@@ -57,6 +43,20 @@ export default function Logos() {
                 alt="IEEE ISIMM Student Branch"
                 src="/About/IEEEisimm.webp"
                 width={300}
+                height={96}
+                className="max-h-24 w-full object-contain transition-transform duration-500 hover:scale-125"
+              />
+            </a>
+            <a 
+              href="https://ieee.tn/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="col-span-2 lg:col-span-1"
+            >
+              <img
+                alt="IEEE Tunisia Section"
+                src="/About/IEEESection.png"
+                width={316}
                 height={96}
                 className="max-h-24 w-full object-contain transition-transform duration-500 hover:scale-125"
               />
