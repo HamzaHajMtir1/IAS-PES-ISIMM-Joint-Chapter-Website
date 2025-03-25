@@ -33,9 +33,9 @@ export async function submitContactForm(formData: {
     }
   } catch (error: any) {
     console.error('Contact form submission error:', error);
-    return {
-      success: false,
+        return {
+          success: false,
       error: 'Failed to process contact form submission'
-    };
-  }
+        };
+      }
 }
