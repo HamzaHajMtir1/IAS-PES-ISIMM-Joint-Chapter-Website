@@ -6,7 +6,7 @@ export default function Testimonials() {
         <div className="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white ring-1 shadow-xl shadow-indigo-600/10 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center" />
         <div className="mx-auto max-w-2xl lg:max-w-4xl">
           <img
-            alt=""
+            alt="IAS/PES ISIMM Logo"
             src="/IASPESISIMMlogo.webp"
             className="mx-auto h-18 w-auto mb-10"
           />
