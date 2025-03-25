@@ -10,6 +10,7 @@ import Navbar from "@/components/Navbar";
 import NewsLetter from "@/components/NewsLetter";
 import Testimonials from "@/components/Testimonials";
 
+
 export default function Home() {
   const { setIsLoading } = useLoading();
   

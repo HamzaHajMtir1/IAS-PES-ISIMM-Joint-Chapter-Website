@@ -1,8 +1,80 @@
 'use client';
 
 import { MapIcon, ShieldCheckIcon } from '@heroicons/react/24/outline';
+import { useState, FormEvent } from 'react';
+import { addContactToSendGrid } from '../actions/newsletter';
 
 export default function NewsLetter() {
+    const [email, setEmail] = useState('');
+    const [status, setStatus] = useState<{
+      type: 'success' | 'error' | 'loading' | null;
+      message: string;
+    }>({ type: null, message: '' });
+
+    const handleSubmit = async (e: FormEvent) => {
+      e.preventDefault();
+      
+      if (!email) return;
+      
+      setStatus({ type: 'loading', message: 'Subscribing...' });
+      
+      try {
+        const result = await addContactToSendGrid({ email });
+        
+        if (result.success) {
+          setStatus({ 
+            type: 'success', 
+            message: 'Thank you for subscribing to our newsletter!' 
+          });
+          setEmail('');
+        } else {
+          // Improved error message handling
+          let errorMessage = result.message || 'Failed to subscribe. Please try again.';
+          
+          // Check for specific error messages
+          if (typeof result.message === 'string') {
+            if (result.message.includes('already exists') || result.message.toLowerCase().includes('already subscribed')) {
+              errorMessage = 'This email is already subscribed to our newsletter.';
+            } else if (result.message.includes('invalid email')) {
+              errorMessage = 'Please enter a valid email address.';
+            } else if (result.message.includes('rate limit') || result.message.includes('429')) {
+              errorMessage = 'Too many requests. Please try again later.';
+            }
+          }
+          
+          setStatus({ 
+            type: 'error', 
+            message: errorMessage
+          });
+        }
+      } catch (error: any) {
+        // Enhanced error handling with more specific messages
+        let errorMessage = 'An unexpected error occurred. Please try again later.';
+        
+        // Check if error has the specific structure we're seeing in the logs
+        if (error && error.code === 400) {
+          errorMessage = 'Invalid email format or this email is already subscribed.';
+          
+          // If there's more detailed information in the response object
+          if (error.response && typeof error.response === 'object') {
+            // Try to extract more specific error message if available
+            const responseError = error.response.error || error.response.message;
+            if (responseError) {
+              errorMessage = typeof responseError === 'string' ? responseError : 'Invalid email format or this email is already subscribed.';
+            }
+          }
+        } else if (error.code === 429) {
+          errorMessage = 'Too many requests. Please try again later.';
+        }
+        
+        setStatus({ 
+          type: 'error', 
+          message: errorMessage
+        });
+        console.error('Newsletter subscription error:', error);
+      }
+    };
+
     return (
       <div className="relative isolate overflow-hidden bg-gray-900 py-16 sm:py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -13,26 +85,37 @@ export default function NewsLetter() {
                 Join our newsletter to receive updates on upcoming activities, technical workshops, 
                 industry insights, and opportunities within the IEEE IAS & PES ISIMM Student Branch Joint Chapter.
               </p>
-              <div className="mt-6 flex max-w-md gap-x-4">
-                <label htmlFor="email-address" className="sr-only">
-                  Email address
-                </label>
-                <input
-                  id="email-address"
-                  name="email"
-                  type="email"
-                  required
-                  placeholder="Enter your email"
-                  autoComplete="email"
-                  className="min-w-0 flex-auto rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-green-500 sm:text-sm/6"
-                />
-                <button
-                  type="submit"
-                  className="flex-none rounded-md bg-green-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-green-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-500"
-                >
-                  Subscribe
-                </button>
-              </div>
+              <form onSubmit={handleSubmit} className="mt-6">
+                <div className="flex max-w-md gap-x-4">
+                  <label htmlFor="email-address" className="sr-only">
+                    Email address
+                  </label>
+                  <input
+                    id="email-address"
+                    name="email"
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    placeholder="Enter your email"
+                    autoComplete="email"
+                    className="min-w-0 flex-auto rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-green-500 sm:text-sm/6"
+                    disabled={status.type === 'loading'}
+                  />
+                  <button
+                    type="submit"
+                    className="flex-none rounded-md bg-green-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-green-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                    disabled={status.type === 'loading'}
+                  >
+                    {status.type === 'loading' ? 'Subscribing...' : 'Subscribe'}
+                  </button>
+                </div>
+                {status.message && (
+                  <div className={`mt-3 text-sm ${status.type === 'success' ? 'text-green-400' : 'text-red-400'}`}>
+                    {status.message}
+                  </div>
+                )}
+              </form>
             </div>
             <dl className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">
               <div className="flex flex-col items-start">

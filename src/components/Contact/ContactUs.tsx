@@ -1,10 +1,62 @@
 'use client'
+import { useState } from 'react';
 import { Button } from "@headlessui/react";
 import { Mail, MapPin } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardContent } from "../ui/card";
 import { motion } from "framer-motion";
+import { toast } from 'sonner';
+import { submitContactForm } from '@/actions/Contact';
 
 export function ContactUs() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [id]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Validate form
+    if (!formData.name || !formData.email || !formData.message) {
+      toast.error('Please fill in all fields');
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      // Call the server action instead of using fetch
+      const result = await submitContactForm(formData);
+
+      if (result.success) {
+        toast.success('Message sent successfully!');
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          message: ''
+        });
+      } else {
+        toast.error(result.error || 'Failed to send message');
+      }
+    } catch (error) {
+      toast.error('An error occurred. Please try again later.');
+      console.error('Contact form error:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const socialButtonVariants = {
     hidden: { scale: 0, opacity: 0 },
     visible: (i: number) => ({
@@ -160,7 +212,7 @@ export function ContactUs() {
                 <CardTitle className="text-green-700">Send Us a Message</CardTitle>
               </CardHeader>
               <CardContent className="flex-1">
-                <form className="grid gap-4">
+                <form className="grid gap-4" onSubmit={handleSubmit}>
                   <div className="grid gap-2">
                     <label
                       htmlFor="name"
@@ -170,8 +222,11 @@ export function ContactUs() {
                     </label>
                     <input
                       id="name"
+                      value={formData.name}
+                      onChange={handleChange}
                       className="flex h-10 w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                       placeholder="Enter your name"
+                      disabled={isSubmitting}
                     />
                   </div>
                   <div className="grid gap-2">
@@ -184,8 +239,11 @@ export function ContactUs() {
                     <input
                       id="email"
                       type="email"
+                      value={formData.email}
+                      onChange={handleChange}
                       className="flex h-10 w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                       placeholder="Enter your email"
+                      disabled={isSubmitting}
                     />
                   </div>
                   <div className="grid gap-2">
@@ -197,12 +255,19 @@ export function ContactUs() {
                     </label>
                     <textarea
                       id="message"
+                      value={formData.message}
+                      onChange={handleChange}
                       className="flex min-h-[120px] w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm ring-offset-white placeholder-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                       placeholder="Enter your message"
+                      disabled={isSubmitting}
                     ></textarea>
                   </div>
-                  <Button type="submit" className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full cursor-pointer">
-                    Send Message
+                  <Button 
+                    type="submit" 
+                    className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
                   </Button>
                 </form>
               </CardContent>
